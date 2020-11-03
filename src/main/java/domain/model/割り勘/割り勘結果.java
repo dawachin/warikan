@@ -33,7 +33,7 @@ public class 割り勘結果 {
 
         this.参加者一覧.一覧().stream()
                 .forEach(参加者 -> {
-                    builder.append(参加者 + "のお支払いは," + this.次の人が支払う金額(参加者));
+                    builder.append(参加者 + "のお支払いは, " + this.次の人が支払う金額(参加者));
                     builder.append(System.getProperty("line.separator"));
                 });
 

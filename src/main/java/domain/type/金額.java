@@ -42,6 +42,6 @@ public class 金額 {
 
     @Override
     public String toString() {
-        return "¥ " + value.toString();
+        return "¥" + value.toString();
     }
 }
