@@ -7,4 +7,8 @@ public class 重み単位 {
     public 重み単位(Integer 単位){
         this.単位 = 単位;
     }
+
+    public Integer 単位数() {
+        return this.単位;
+    }
 }

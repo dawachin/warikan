@@ -3,7 +3,7 @@ package domain.model.参加者;
 import domain.model.割り勘.傾斜種別ごとの重み単位区分;
 import domain.model.割り勘.重み一覧;
 import domain.model.割り勘.重み単位;
-import domain.type.割り勘傾斜種別;
+import domain.model.割り勘.割り勘傾斜種別;
 
 import java.util.List;
 import java.util.stream.Collectors;

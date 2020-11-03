@@ -1,7 +1,5 @@
 package domain.model.割り勘;
 
-import domain.type.割り勘傾斜種別;
-
 public enum  傾斜種別ごとの重み単位区分 {
 
     重い(割り勘傾斜種別.多め, new 重み単位(10 * 5)),

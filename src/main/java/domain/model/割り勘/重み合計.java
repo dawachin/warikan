@@ -1,6 +1,6 @@
 package domain.model.割り勘;
 
-public class 重み合計 {
+public class  重み合計 {
 
     Integer 重みの合計値;
 

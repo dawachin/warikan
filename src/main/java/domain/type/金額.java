@@ -21,8 +21,10 @@ public class 金額 {
     }
 
     public 金額 除算(Integer 割る数){
-        return new 金額(this.value.divide(new BigDecimal(割る数)));
+        return new 金額(this.value.divide(new BigDecimal(割る数),2, BigDecimal.ROUND_HALF_UP));
     }
+
+    public 金額 乗算(Integer かける数) {return new 金額(this.value.multiply(new BigDecimal(かける数))); }
 
 
     @Override
@@ -36,5 +38,10 @@ public class 金額 {
     @Override
     public int hashCode() {
         return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        return "¥ " + value.toString();
     }
 }
