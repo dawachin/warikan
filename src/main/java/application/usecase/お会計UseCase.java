@@ -5,8 +5,7 @@ import domain.model.請求.注文品Evil;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class お会計EvilUseCase {
-
+public class お会計UseCase {
 
     public long 合計金額を計算する(List<注文品Evil> 注文一覧){
 
@@ -35,6 +34,4 @@ public class お会計EvilUseCase {
         BigDecimal 丸めた金額 = 合計金額.setScale(0, BigDecimal.ROUND_HALF_UP);
         return 丸めた金額.longValue();
     }
-
-
 }
