@@ -1,7 +1,6 @@
 package application.usecase;
 
-import domain.model.請求.注文品;
-import domain.model.請求.注文品Evil;
+import domain.model.請求.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -16,9 +15,9 @@ public class お会計Test {
     @Test
     public void 注文一覧から合計金出する() {
 
-        注文品 塩つくね = new 注文品("塩つくね", 220, 4, false);
-        注文品 鉄板鶏餃子 = new 注文品("鉄板鶏餃子", 520, 2, false);
-        注文品 唐揚げ = new 注文品("唐揚げ", 420, 2, true);
+        注文品 塩つくね = new 注文品(new 注文品名("塩つくね"), new 注文単価(220), new 注文個数(4), false);
+        注文品 鉄板鶏餃子 = new 注文品(new 注文品名("鉄板鶏餃子"), new 注文単価(520), new 注文個数(2), false);
+        注文品 唐揚げ = new 注文品(new 注文品名("唐揚げ"), new 注文単価(420), new 注文個数(2), true);
 
         //　注文品一覧
         List<注文品> 注文一覧 = Arrays.asList(塩つくね, 鉄板鶏餃子, 唐揚げ);

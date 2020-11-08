@@ -1,7 +1,6 @@
 package application.usecase;
 
 import domain.model.請求.注文品;
-import domain.model.請求.注文品Evil;
 import domain.model.請求.消費税率区分;
 
 import java.math.BigDecimal;
