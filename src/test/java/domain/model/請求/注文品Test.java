@@ -2,6 +2,8 @@ package domain.model.請求;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -36,5 +38,15 @@ public class 注文品Test {
 
         assertWithMessage("エラーがスローされている事")
                 .that(持ち帰りなのに個数が500.getMessage()).isEqualTo("持ち帰りのときは201個以上は注文できません");
+    }
+
+    @Test
+    public void 単価に個数を乗算した値が小計である() {
+        注文品 注文 = new 注文品("鉄板鶏餃子", 520, 2, true);
+
+        BigDecimal 小計 = 注文.小計();
+
+        assertWithMessage("エラーがスローされている事")
+                .that(小計).isEqualTo(new BigDecimal(1040));
     }
 }

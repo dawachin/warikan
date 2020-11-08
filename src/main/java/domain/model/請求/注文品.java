@@ -24,6 +24,19 @@ public class 注文品 {
         this.持ち帰り = 持ち帰り;
     }
 
+    /**
+     * 注文品の小計
+     *
+     * @return
+     */
+    public BigDecimal 小計() {
+        return 単価.multiply(new BigDecimal(個数));
+    }
+
+    public boolean is持ち帰り(){
+        return this.持ち帰り;
+    }
+
 
 
 
