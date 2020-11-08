@@ -2,6 +2,7 @@ package application.usecase;
 
 import domain.model.請求.注文品;
 import domain.model.請求.注文品Evil;
+import domain.model.請求.消費税率区分;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,22 +15,13 @@ public class お会計UseCase {
         // 合計金額を0で初期化
         BigDecimal 合計金額 = BigDecimal.ZERO;
 
-        BigDecimal 標準税率 = new BigDecimal(1.1);
-        BigDecimal 軽減税率 = new BigDecimal(1.08);
-
         // 注文一覧から合計金額を算出する
         for (注文品 注文品 : 注文一覧){
 
-            // 持ち帰りか否かで適用する税率が変わる
-            if (注文品.is持ち帰り()){
-                // 持ち帰りの時は軽減税率を適用
-                BigDecimal 小計 = 注文品.小計().multiply(軽減税率);
-                合計金額 = 合計金額.add(小計);
-            } else {
-                // 持ち帰りじゃない時は標準税率を適用
-                BigDecimal 小計 = 注文品.小計().multiply(標準税率);
-                合計金額 = 合計金額.add(小計);
-            }
+            BigDecimal 消費税 = 消費税率区分.消費税率を持ち帰り可否から決める(注文品.is持ち帰り());
+            BigDecimal 小計 = 注文品.小計().multiply(消費税);
+            合計金額 = 合計金額.add(小計);
+
         }
 
         BigDecimal 丸めた金額 = 合計金額.setScale(0, BigDecimal.ROUND_HALF_UP);
