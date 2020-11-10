@@ -21,15 +21,15 @@ public class お会計EvilUseCase {
         for (注文品Evil 注文品 : 注文一覧){
 
             // 持ち帰りか否かで適用する税率が変わる
+            BigDecimal 小計;
             if (注文品.is持ち帰り()){
                 // 持ち帰りの時は軽減税率を適用
-                BigDecimal 小計 = 注文品.get単価().multiply(new BigDecimal(注文品.get個数())).multiply(軽減税率);
-                合計金額 = 合計金額.add(小計);
+                小計 = 注文品.get単価().multiply(new BigDecimal(注文品.get個数())).multiply(軽減税率);
             } else {
                 // 持ち帰りじゃない時は標準税率を適用
-                BigDecimal 小計 = 注文品.get単価().multiply(new BigDecimal(注文品.get個数())).multiply(標準税率);
-                合計金額 = 合計金額.add(小計);
+                小計 = 注文品.get単価().multiply(new BigDecimal(注文品.get個数())).multiply(標準税率);
             }
+            合計金額 = 合計金額.add(小計);
         }
 
         BigDecimal 丸めた金額 = 合計金額.setScale(0, BigDecimal.ROUND_HALF_UP);
