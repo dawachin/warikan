@@ -20,4 +20,8 @@ public class 注文単価 {
     public 金額 金額(){
         return this.単価;
     }
+
+    public 金額 個数を乗算する(注文個数 個数){
+        return this.単価.乗算(個数.値());
+    }
 }
