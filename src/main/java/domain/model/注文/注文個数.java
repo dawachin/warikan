@@ -1,4 +1,4 @@
-package domain.model.請求;
+package domain.model.注文;
 
 import java.math.BigDecimal;
 

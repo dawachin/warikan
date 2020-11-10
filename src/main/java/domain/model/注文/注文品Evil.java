@@ -1,4 +1,4 @@
-package domain.model.請求;
+package domain.model.注文;
 
 import java.math.BigDecimal;
 
@@ -35,6 +35,7 @@ public class 注文品Evil {
     public void set単価(BigDecimal 単価) {
         this.単価 = 単価;
     }
+
     public void set単価(Integer 単価) {
         this.単価 = new BigDecimal(単価);
     }

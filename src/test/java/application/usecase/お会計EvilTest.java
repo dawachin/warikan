@@ -1,6 +1,6 @@
 package application.usecase;
 
-import domain.model.請求.注文品Evil;
+import domain.model.注文.注文品Evil;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -48,6 +48,33 @@ public class お会計EvilTest {
         注文品Evil 塩つくね = new 注文品Evil();
         塩つくね.set注文品名("塩つくね");
         塩つくね.set単価(220);
+        塩つくね.set個数(4);
+        塩つくね.set持ち帰り(false);
+
+        注文品Evil 鉄板鶏餃子 = new 注文品Evil();
+        鉄板鶏餃子.set注文品名("鉄板鶏餃子");
+        鉄板鶏餃子.set単価(-520); //　×単価にマイナスとかあり得ない
+        鉄板鶏餃子.set個数(-2); //　×個数にマイナスとかあり得ない
+        鉄板鶏餃子.set持ち帰り(false);
+
+        注文品Evil 唐揚げ = new 注文品Evil();
+        唐揚げ.set注文品名("唐揚げ");
+        唐揚げ.set単価(420);
+        唐揚げ.set個数(2);
+        唐揚げ.set持ち帰り(true);
+
+        //　注文品一覧
+        List<注文品Evil> 注文一覧 = Arrays.asList(塩つくね, 鉄板鶏餃子, 唐揚げ);
+
+        long 計算結果 = お会計UseCase.合計金額を計算する(注文一覧);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void 単価に１０万以上が入っているとき_EVIL() {
+
+        注文品Evil 塩つくね = new 注文品Evil();
+        塩つくね.set注文品名("塩つくね");
+        塩つくね.set単価(100000);
         塩つくね.set個数(4);
         塩つくね.set持ち帰り(false);
 
