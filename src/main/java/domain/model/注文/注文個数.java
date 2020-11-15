@@ -1,12 +1,13 @@
 package domain.model.注文;
 
-import java.math.BigDecimal;
+import domain.type.個;
 
 public class 注文個数 {
 
-    BigDecimal 個数;
+    個 注文個数;
 
-    BigDecimal 最大注文個数 = new BigDecimal(500);
+    個 最大注文個数 = 個.整数より(500);
+    個 最小注文個数 = 個.整数より(0);
 
     /**
      * コンストラクタ
@@ -17,17 +18,17 @@ public class 注文個数 {
      * @param 個数
      */
     public 注文個数(Integer 個数){
-        if ( 個数 < 0) throw new RuntimeException("個数がマイナスになっています");
-        if (new BigDecimal(個数).compareTo(最大注文個数) > 0) throw new RuntimeException("扱える最大注文個数を超えています");
-        this.個数 = new BigDecimal(個数);
+        this.注文個数 = 個.整数より(個数);
+        if ( this.注文個数.は次の値より小さいか(最小注文個数)) throw new RuntimeException("個数がマイナスになっています");
+        if ( this.注文個数.は次の値より大きいか(最大注文個数)) throw new RuntimeException("扱える最大注文個数を超えています");
     }
 
-    public boolean は次の値以上か(Integer 値){
-        return this.個数.compareTo(new BigDecimal(値)) >= 0;
+    public boolean は次の値以上か(個 比較対象個数){
+        return this.注文個数.は次の値以上か(比較対象個数);
     }
 
-    public BigDecimal 値() {
-        return this.個数;
+    public 個 値() {
+        return this.注文個数;
     }
 
 }
