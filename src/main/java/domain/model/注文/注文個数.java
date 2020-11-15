@@ -4,10 +4,10 @@ import domain.type.個;
 
 public class 注文個数 {
 
-    private 個 注文個数;
+    private final 個 注文個数;
 
-    private 個 最大注文個数 = 個.整数より(500);
-    private 個 最小注文個数 = 個.整数より(0);
+    private final 個 最大注文個数 = 個.整数より(500);
+    private final 個 最小注文個数 = 個.整数より(0);
 
     /**
      * コンストラクタ

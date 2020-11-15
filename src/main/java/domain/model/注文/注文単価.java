@@ -5,7 +5,8 @@ import domain.type.金額;
 
 public class 注文単価 {
 
-    private 金額 単価;
+    private final 金額 単価;
+
     private final 金額 最大注文単価 = 金額.整数より(100000);
 
     public 注文単価(Integer 単価){

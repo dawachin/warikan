@@ -1,6 +1,5 @@
 package domain.model.注文;
 
-import domain.type.個;
 import domain.type.金額;
 
 public class 注文品 {

@@ -28,8 +28,6 @@ public class 金額 {
 
     public 金額 乗算(Integer かける数) {return new 金額(this.value.multiply(new BigDecimal(かける数))); }
 
-    public 金額 乗算(BigDecimal かける数) {return new 金額(this.value.multiply(かける数)); }
-
     public 金額 乗算(個 かける数) {return new 金額(this.value.multiply(かける数.個)); }
 
     public 金額 加算(金額 加算額) {return new 金額(this.value.add(加算額.value)); }
