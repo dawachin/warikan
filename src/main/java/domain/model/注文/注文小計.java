@@ -5,9 +5,9 @@ import domain.type.金額;
 
 public class 注文小計 {
 
-    金額 税抜合計金額;
+    private 金額 税抜合計金額;
 
-    消費税率区分 税区分;
+    private 消費税率区分 税区分;
 
     public 注文小計(金額 税抜合計金額, 消費税率区分 税区分){
         this.税抜合計金額 = 税抜合計金額;
