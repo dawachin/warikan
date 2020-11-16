@@ -13,8 +13,8 @@ public enum  消費税率区分 {
         this.税率 = 消費税;
     }
 
-    public 消費税 税率(){
-        return this.税率;
+    public 百分率 税率(){
+        return this.税率.率();
     }
 
 }
