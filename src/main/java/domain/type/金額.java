@@ -60,4 +60,11 @@ public class 金額 {
     public String toString() {
         return "¥" + value.toString();
     }
+
+    public 金額 を次の通貨発行単位まで切り上げる(日本銀行発行通貨種別 端数単位) {
+        BigDecimal 計算結果
+                = this.value.divide(端数単位.値.value, 0, BigDecimal.ROUND_UP)
+                            .multiply(端数単位.値.value);
+        return new 金額(計算結果);
+    }
 }
