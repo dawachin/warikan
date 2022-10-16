@@ -19,6 +19,8 @@ public class 参加者 {
         return this.傾斜種別;
     }
 
+    public 参加者名 名前() {return this.名前; }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) return true;
